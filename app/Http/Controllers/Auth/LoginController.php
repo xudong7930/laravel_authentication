@@ -36,4 +36,22 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // 自定义guard名称
+    public function gurad()
+    {
+        return Auth::guard('your-guard-name');
+    }
+
+    // 自定义认证成功后的跳转
+    public function redirectTo()
+    {
+        return '/';
+    }
+
+    // 验证的用户名字段
+    public function username()
+    {
+        return 'email';
+    }
 }

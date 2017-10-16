@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'web', // 默认认证guard
+        'passwords' => 'users', // 密码重置
     ],
 
     /*
@@ -109,6 +109,13 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+
+        // 自定义密码
+        'ergou' => [
+            'provider' => 'ergou',
+            'table' => 'password_resets',
+            'expire' => 360
+        ]
     ],
 
 ];
